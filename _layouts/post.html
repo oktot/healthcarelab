@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<article class="wrapper wrapper--content" role="article" itemprop="blogPost">
+	<header class="post__header">
+		<h1 class="post__title" itemprop="headline">{{ page.title | xml_escape }}</h1>
+		<hr />
+		<h2 class="post__date" itemprop="datePublished">{% include date.html date=page.date %}</h2>
+	</header>
+
+	{{ content }}
+
+	<hr class="mc_hr" />
+
+	<h2>Liked this post? Sign up for the weekly newsletter!</h2>
+	<p>Be the first to know when a new article is posted and get an inside scoop on the most interesting news and the freshest links of the week. <em>(I hate spam just as much as you do, so no spam, ever. Promise.)</em></p>
+
+	{% include newsletter-form.html %}
+
+	<hr />
+
+	<div class="post__related">
+		{% if page.previous %}
+			<a href="{% if page.previous.external_url %}{{ page.previous.external_url }}{% else %}{{ page.previous.url }}{% endif %}" target="{% if page.previous.external_url %}_blank{% endif %}" class="post__related-previous" onclick="OWATracker.trackAction('post', 'click', 'previous');" title="{{ page.previous.title }}">{{ page.previous.title }}</a>
+		{% endif %}
+		{% if page.next %}
+			{% if page.next.hidden != true %}
+				<a href="{% if page.next.external_url %}{{ page.next.external_url }}{% else %}{{ page.next.url }}{% endif %}" target="{% if page.next.external_url %}_blank{% endif %}" class="post__related-next" onclick="OWATracker.trackAction('post', 'click', 'next');" title="{{ page.next.title }}">{{ page.next.title }}</a>
+			{% endif %}
+		{% endif %}
+	</div>
+
+	<a href="https://twitter.com/intent/tweet?original_referer={{ site.url | cgi_escape }}{{ page.url | cgi_escape }}&amp;text={{ page.title | uri_escape }}&amp;tw_p=tweetbutton&amp;url={{ site.url | cgi_escape }}{{ page.url | cgi_escape }}&amp;via=mxstbr" rel="nofollow" target="_blank" class="share-on-twitter hidden" onclick="OWATracker.trackAction('post', 'click', 'tweet-this');">Tweet this article</a>
+
+</article>

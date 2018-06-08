@@ -1,0 +1,20 @@
+// Mixins
+// ---------------------------------------/
+
+@function em( $fontSize, $contextSize: 16 ) {
+  @return 1em * ( $fontSize / $contextSize ); }
+
+@mixin rem($property, $value) {
+    #{$property}: #{$value * 16}px;
+    #{$property}: #{$value}rem;
+}
+
+@mixin sans {
+  font-family: $sans-serif;
+
+  html:not(.wf-active) & {
+    font-family: $fallback-sans-serif;
+    @content;
+  }
+}
+

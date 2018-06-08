@@ -1,0 +1,50 @@
+// Home styles
+// ---------------------------------------/
+
+.post-home {
+    &__wrapper {
+      text-decoration: none;
+    }
+
+    &__wrapper:hover,
+		&__wrapper:focus {
+      text-decoration: none;
+    }
+
+    &:hover &__title {
+      text-decoration-color: rgba($text-color, 1);
+      -webkit-text-decoration-color: rgba($text-color, 1);
+    }
+
+    &__title {
+        margin-top: 0;
+				margin-bottom: 0.5em;
+        color: $text-color;
+        text-decoration: underline;
+        text-decoration-color: rgba($text-color, 0.5);
+        -webkit-text-decoration-color: rgba($text-color, 0.5);
+        transition: text-decoration-color 0.2s;
+				@include rem(font-size, 1.1);
+    }
+
+		&__date,
+		&__attribution {
+			@include rem(font-size, 0.9);
+			color: $light-text-color;
+			font-weight: 400;
+			margin: 0;
+			margin-bottom: 0.5em;
+			display: inline-block;
+			@include sans;
+		}
+
+		&__attribution:before {
+			content: '\b7';
+			margin-right: 0.3em; // Magic number that makes it look visually aligned
+		}
+
+		&__excerpt {
+			color: black;
+      margin-bottom: 0;
+		}
+}

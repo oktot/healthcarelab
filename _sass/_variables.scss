@@ -1,0 +1,24 @@
+// Variables
+// ---------------------------------------/
+
+// Colors
+$background-color: #F6F6F6;
+$light-background-color: lighten($background-color, 1);
+$text-color: #262626;
+$light-text-color: lighten($text-color, 50);
+$code-color: #bf616a;
+$very-light-grey: darken($background-color, 3);
+$light-grey: darken($background-color, 15);
+$dark-grey: #777;
+$main-color: #6CC0E5;
+$dark-main-color: darken($main-color, 25);
+
+// Typography
+$serif: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+$sans-serif: 'Source Sans Pro', sans-serif;
+$fallback-sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$monospace: Consolas, monaco, monospace;
+
+// Sizes
+$max-width: 28em;
+$nav-height: 50px;

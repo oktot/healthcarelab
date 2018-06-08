@@ -1,0 +1,16 @@
+<section class="pagination">
+    {% if paginator.next_page %}
+        <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">cũ hơn</a>
+    {% else %}
+        <span class="pagination-item older">cũ</span>
+    {% endif %}
+    {% if paginator.previous_page %}
+        {% if paginator.page == 2 %}
+            <a class="pagination-item newer" href="/">mới</a>
+        {% else %}
+            <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">mới hơn</a>
+        {% endif %}
+    {% else %}
+        <span class="pagination-item newer">mới hơn</span>
+    {% endif %}
+</section>
