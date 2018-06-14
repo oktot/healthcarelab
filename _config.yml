@@ -4,7 +4,7 @@ url-title: "healthcare"
 description: "healthcare, mẹo vặt gia đình, mẹo vặt hàng ngày, mẹo vặt nhân gian."
 paginate: 100
 url: "http://healthcarelab.xyz"
-permalink: /title/
+permalink: /:categories/:title.html
 future: false
 defaults:
   -
